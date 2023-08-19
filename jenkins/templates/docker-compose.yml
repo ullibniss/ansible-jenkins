@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  jenkins:
+    image: jenkins/jenkins:{{ jenkins_version }}
+    ports:
+      - "8080:8080"
+    volumes:
+      - "{{ jenkins_deploy_dir }}:/var/jenkins_home"
+  ssh-agent:
+    image: jenkins/ssh-agent

@@ -1,0 +1,10 @@
+---
+- name: Check jenkins logs
+  command: docker-compose logs
+  args:
+    chdir: "{{ jenkins_deploy_dir }}"
+  register: logs
+
+- name: Show jenkings logs
+  debug:
+    msg: "{{ logs }}"

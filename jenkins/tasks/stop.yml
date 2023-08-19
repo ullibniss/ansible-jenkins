@@ -1,0 +1,5 @@
+---
+- name: Stop jenkins
+  command: docker-compose stop
+  args:
+    chdir: "{{ jenkins_deploy_dir }}"
